@@ -95,7 +95,7 @@ class AnalyticsTracker {
             this.saveAnalytics();
             
             console.log(`%c✓ Click registrado: ${platform.toUpperCase()}`, 
-                'color: #ff6b35; font-weight: bold; font-size: 14px;');
+                'color: #f79c1c; font-weight: bold; font-size: 14px;');
         }
     }
 
@@ -115,18 +115,18 @@ class AnalyticsTracker {
 
     displayWelcome() {
         const styles = {
-            header: 'color: #1fb6ff; font-size: 24px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);',
-            info: 'color: #ff6b35; font-size: 14px;',
-            command: 'background: #1fb6ff; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;'
+            header: 'color: #00bef1; font-size: 24px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);',
+            info: 'color: #f79c1c; font-size: 14px;',
+            command: 'background: #00bef1; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;'
         };
 
         console.log('%c🗳️ Julio César Alfaro', styles.header);
         console.log('%cCampaña Digital Oficial | Vicegobernador Santa Cruz', styles.info);
-        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #ff6b35;');
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #f79c1c;');
         console.log('%c✓ Sistema de Analytics Activado', styles.info);
         console.log('%cPara ver estadísticas detalladas, ejecuta: %cverEstadisticas()', 
             styles.info, styles.command);
-        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #ff6b35;');
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #f79c1c;');
     }
 }
 
@@ -141,10 +141,10 @@ window.verEstadisticas = function() {
     
     console.clear();
     console.log('%c📊 ESTADÍSTICAS DE CAMPAÑA - JULIO CÉSAR ALFARO', 
-        'color: #1fb6ff; font-size: 20px; font-weight: bold; padding: 10px;');
-    console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #ff6b35;');
+        'color: #00bef1; font-size: 20px; font-weight: bold; padding: 10px;');
+    console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #f79c1c;');
     
-    console.group('%c📈 Métricas Generales', 'color: #ff6b35; font-weight: bold;');
+    console.group('%c📈 Métricas Generales', 'color: #f79c1c; font-weight: bold;');
     console.log(`Total de Visitas: ${stats.totalVisits}`);
     console.log(`Total de Clicks: ${stats.totalClicks}`);
     console.log(`Sesiones Registradas: ${stats.totalSessions}`);
@@ -152,7 +152,7 @@ window.verEstadisticas = function() {
     console.log(`Última Visita: ${new Date(stats.lastVisit).toLocaleString('es-BO')}`);
     console.groupEnd();
     
-    console.group('%c🌐 Clicks por Plataforma', 'color: #ff6b35; font-weight: bold;');
+    console.group('%c🌐 Clicks por Plataforma', 'color: #f79c1c; font-weight: bold;');
     Object.entries(stats.platformBreakdown).forEach(([platform, clicks]) => {
         const percentage = stats.totalClicks > 0 ? 
             ((clicks / stats.totalClicks) * 100).toFixed(1) : 0;
@@ -170,7 +170,7 @@ window.verEstadisticas = function() {
     console.groupEnd();
     
     if (stats.recentClicks.length > 0) {
-        console.group('%c⏱️ Clicks Recientes', 'color: #ff6b35; font-weight: bold;');
+        console.group('%c⏱️ Clicks Recientes', 'color: #f79c1c; font-weight: bold;');
         console.table(stats.recentClicks.map(click => ({
             Plataforma: click.platform,
             Fecha: new Date(click.timestamp).toLocaleString('es-BO'),
@@ -191,7 +191,7 @@ window.verEstadisticas = function() {
 class ParticleSystem {
     constructor() {
         this.container = document.querySelector('.particle-container');
-        this.colors = ['#1fb6ff', '#ff6b35', '#ffffff'];
+        this.colors = ['#00bef1', '#f79c1c', '#ffffff'];
     }
 
     createParticle(x, y) {
@@ -313,9 +313,9 @@ function initLogoInteractions() {
 
 function activateEasterEgg() {
     console.log('%c🎉 ¡EASTER EGG ACTIVADO!', 
-        'color: #1fb6ff; font-size: 24px; font-weight: bold; animation: rainbow 2s linear infinite;');
+        'color: #00bef1; font-size: 24px; font-weight: bold; animation: rainbow 2s linear infinite;');
     console.log('%c¡Gracias por tu interés en nuestra campaña!', 
-        'color: #ff6b35; font-size: 16px;');
+        'color: #f79c1c; font-size: 16px;');
     
     const hexagon = document.querySelector('.hexagon');
     hexagon.style.animation = 'hexagon-pulse 0.5s ease-in-out 3';
@@ -456,7 +456,7 @@ function initVisibilityTracking() {
         if (document.hidden) {
             const timeSpent = Math.floor((Date.now() - visibilityStartTime) / 1000);
             console.log(`%cTiempo en página: ${timeSpent} segundos`, 
-                'color: #ff6b35; font-weight: bold;');
+                'color: #f79c1c; font-weight: bold;');
         } else {
             visibilityStartTime = Date.now();
         }
@@ -475,7 +475,7 @@ function initCustomCursor() {
             position: fixed;
             width: 20px;
             height: 20px;
-            border: 2px solid #1fb6ff;
+            border: 2px solid #00bef1;
             border-radius: 50%;
             pointer-events: none;
             z-index: 10000;
@@ -515,11 +515,11 @@ function initCustomCursor() {
         document.querySelectorAll('a, button, [role="button"]').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.style.transform = 'scale(1.5)';
-                cursor.style.borderColor = '#ff6b35';
+                cursor.style.borderColor = '#f79c1c';
             });
             el.addEventListener('mouseleave', () => {
                 cursor.style.transform = 'scale(1)';
-                cursor.style.borderColor = '#1fb6ff';
+                cursor.style.borderColor = '#00bef1';
             });
         });
     }
